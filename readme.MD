@@ -10,6 +10,14 @@
 - **Seamless Integration**: The copy button is unobtrusive and integrates smoothly into the WhatsApp Web interface.
 - **Clipboard Support**: Directly copies text to your clipboard for easy pasting into other applications.
 
+## Installation
+
+1. **Clone or Download**: Clone the repository using `git clone https://github.com/yourusername/WhatsApp-Message-Copy.git` or download the zip file.
+2. **Navigate to Chrome Extensions Page**: Open Chrome and go to `chrome://extensions/`.
+3. **Enable Developer Mode**: Toggle the switch to enable Developer Mode.
+4. **Load Unpacked Extension**: Click on "Load unpacked" and select the directory where the extension files are located.
+5. **Done**: The extension is now installed and ready to use on WhatsApp Web.
+
 ## Usage
 
 1. **Open WhatsApp Web**: Navigate to [WhatsApp Web](https://web.whatsapp.com/).
