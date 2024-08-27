@@ -16,8 +16,10 @@ function createCopyButton(row) {
   copyButton.setAttribute("id", "copy-button");
   copyButton.setAttribute("title", "Copy");
 
+  const copyableText = row.querySelector(".copyable-text");
+  if (!copyableText) return null;
+
   copyButton.addEventListener("click", () => {
-    const copyableText = row.querySelector(".copyable-text");
     navigator.clipboard
       .writeText(copyableText.lastChild.innerText)
       .then(function () {
@@ -42,25 +44,28 @@ function createCopyButton(row) {
 }
 
 document.addEventListener("mouseover", function (event) {
-  try {
-    const rows = document.querySelectorAll('[role="row"]');
+  const rows = document.querySelectorAll('[role="row"]') || [];
 
-    for (let row of rows) {
+  for (let row of rows) {
+    try {
       const isCopyAlreadyExist = row.querySelector("#copy-message");
       if (isCopyAlreadyExist) {
-        return null;
+        continue;
       }
 
       //
+
       const copyButton = createCopyButton(row);
+
+      if (!copyButton) continue;
 
       const messageOut = row.getElementsByClassName("message-out");
 
       /* 
-      
-          below logic could be change in future
-      
-          */
+        
+            below logic could be change in future
+        
+            */
 
       // start
       const firstDiv = row.firstChild.firstChild.getElementsByTagName("div")[0];
@@ -69,8 +74,7 @@ document.addEventListener("mouseover", function (event) {
 
       const firstDivLastChild = firstDiv.lastChild;
 
-      if (!firstDivLastChild.firstChild)
-        firstDivLastChild.firstChild.style.display = "flex";
+      firstDivLastChild.firstChild.style.display = "flex";
 
       if (messageOut.length > 0) {
         firstDivLastChild.firstChild.appendChild(copyButton);
@@ -80,11 +84,11 @@ document.addEventListener("mouseover", function (event) {
           firstDivLastChild.firstChild.firstChild
         );
       }
-
-      // end
+    } catch (err) {
+      console.error("error in row modification", err, row);
     }
-  } catch (err) {
-    console.error(err);
+
+    // end
   }
 });
 
