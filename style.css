@@ -1,0 +1,10 @@
+#copy-button {
+    visibility: hidden;
+    margin:0 3px;
+  }
+  
+  .message-in:hover #copy-button,
+  .message-out:hover #copy-button {
+    visibility: visible;
+  }
+  
