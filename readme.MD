@@ -12,7 +12,7 @@
 
 ## Installation
 
-1. **Clone or Download**: Clone the repository using `git clone https://github.com/yourusername/WhatsApp-Message-Copy.git` or download the zip file.
+1. **Clone or Download**: Clone the repository using `git clone https://github.com/rahul72925/WhatsApp-Message-Copy.git` or download the zip file.
 2. **Navigate to Chrome Extensions Page**: Open Chrome and go to `chrome://extensions/`.
 3. **Enable Developer Mode**: Toggle the switch to enable Developer Mode.
 4. **Load Unpacked Extension**: Click on "Load unpacked" and select the directory where the extension files are located.
