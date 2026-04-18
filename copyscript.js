@@ -76,7 +76,26 @@ document.addEventListener("mouseover", function (event) {
             */
 
       // start
-      const targetContainer = row.querySelector("._amj_ > div");
+      const findTarget = (r) => {
+        // Preferred: Specific container from reference
+        const amj = r.querySelector("._amj_ > div");
+        if (amj) return amj;
+
+        // Fallback: Structural sibling of message content
+        const copyable = r.querySelector(".copyable-text");
+        if (copyable) {
+          const contentWrapper = copyable.closest('div[class*="_amk"]');
+          if (contentWrapper && contentWrapper.children.length > 1) {
+            const lastChild = contentWrapper.lastElementChild;
+            return lastChild.querySelector("div") || lastChild;
+          }
+        }
+
+        // Last resort: Message bubble itself
+        return r.querySelector(".message-out, .message-in");
+      };
+
+      const targetContainer = findTarget(row);
 
       if (targetContainer) {
         targetContainer.style.display = "flex";
