@@ -9,7 +9,13 @@ const blackIcon =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAwLjQ1IDAuNDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uMDMuMjg1QS4wNDUuMDQ1IDAgMCAwIC4wNzUuMzNILjEyVi4zSC4wNzVBLjAxNS4wMTUgMCAwIDEgLjA2LjI4NXYtLjIxQS4wMTUuMDE1IDAgMCAxIC4wNzUuMDZoLjIxQS4wMTUuMDE1IDAgMCAxIC4zLjA3NVYuMTJILjE2NUEuMDQ1LjA0NSAwIDAgMCAuMTIuMTY1di4yMUEuMDQ1LjA0NSAwIDAgMCAuMTY1LjQyaC4yMUEuMDQ1LjA0NSAwIDAgMCAuNDIuMzc1di0uMjFBLjA0NS4wNDUgMCAwIDAgLjM3NS4xMkguMzNWLjA3NUEuMDQ1LjA0NSAwIDAgMCAuMjg1LjAzaC0uMjFBLjA0NS4wNDUgMCAwIDAgLjAzLjA3NXptLjEyLS4xMkEuMDE1LjAxNSAwIDAgMSAuMTY1LjE1aC4yMUEuMDE1LjAxNSAwIDAgMSAuMzkuMTY1di4yMUEuMDE1LjAxNSAwIDAgMSAuMzc1LjM5aC0uMjFBLjAxNS4wMTUgMCAwIDEgLjE1LjM3NXoiIGZpbGw9IiMwMDAiLz48L3N2Zz4=";
 
 const whiteIcon =
-  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAwLjQ1IDAuNDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uMDMuMjg1QS4wNDUuMDQ1IDAgMCAwIC4wNzUuMzNILjEyVi4zSC4wNzVBLjAxNS4wMTUgMCAwIDEgLjA2LjI4NXYtLjIxQS4wMTUuMDE1IDAgMCAxIC4wNzUuMDZoLjIxQS4wMTUuMDE1IDAgMCAxIC4zLjA3NVYuMTJILjE2NUEuMDQ1LjA0NSAwIDAgMCAuMTIuMTY1di4yMUEuMDQ1LjA0NSAwIDAgMCAuMTY1LjQyaC4yMUEuMDQ1LjA0NSAwIDAgMCAuNDIuMzc1di0uMjFBLjA0NS4wNDUgMCAwIDAgLjM3NS4xMkguMzNWLjA3NUEuMDQ1LjA0NSAwIDAgMCAuMjg1LjAzaC0uMjFBLjA0NS4wNDUgMCAwIDAgLjAzLjA3NXptLjEyLS4xMkEuMDE1LjAxNSAwIDAgMSAuMTY1LjE1aC4yMUEuMDE1LjAxNSAwIDAgMSAuMzkuMTY1di4yMUEuMDE1LjAxNSAwIDAgMSAuMzc1LjM5aC0uMjFBLjAxNS4wMTUgMCAwIDEgLjE1LjM3NXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=";
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAwLjQ1IDAuNDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uMDMuMjg1QS4wNDUuMDQ1IDAgMCAwIC4wNzUuMzNILjEyVi4zSC4wNzVBLjAxNS4wMTUgMCAwIDEgLjA2LjI4NXYtLjIxQS4wMTUuMDE1IDAgMCAxIC4wNzUuMDZoLjIxQS4wMTUuMDE1IDAgMCAxIC4zLjA3NVYuMTJILjE2NUEuMDQ1LjA0NSAwIDAgMCAuMTIuMTY1di4yMUEuMDQ1LjA0NSAwIDAgMCAuMTY1LjQyaC4yMUEuMDQ1LjA0NSAwIDAgMCAuNDIuMzc1di0uMjFBLjA0NS4wNDUgMCAwIDAgLjM3NS4xMkguMzNWLjA3NUEuMDQ1LjA0NSAwIDAgMCAuMjg1LjAzaC0uMjFBLjA0NS4wNDUgMCAwIDAgLjAzLjA3NXptLjEyLS4xMkEuMDE1LjAxNSAwIDAgMSAuMTY1LjE1aC4yMUEuMDE1LjA0NSAwIDAgMSAuMzkuMTY1di4yMUEuMDE1LjAxNSAwIDAgMSAuMzc1LjM5aC0uMjFBLjAxNS4wMTUgMCAwIDEgLjE1LjM3NXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=";
+
+const blackTick =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNCAxMkw5IDE3TDIwIDYiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+";
+
+const whiteTick =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNCAxMkw5IDE3TDIwIDYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+";
 
 function createCopyButton(row) {
   const copyButton = document.createElement("div");
@@ -23,7 +29,13 @@ function createCopyButton(row) {
     navigator.clipboard
       .writeText(copyableText.lastChild.innerText)
       .then(function () {
+        const originalIcon = image.getAttribute("src");
+        image.setAttribute("src", isDarkMode() ? whiteTick : blackTick);
         showToaster();
+
+        setTimeout(() => {
+          image.setAttribute("src", originalIcon);
+        }, 2000);
       })
       .catch(function (error) {
         showToaster("FAILED");
@@ -59,30 +71,16 @@ document.addEventListener("mouseover", function (event) {
 
       if (!copyButton) continue;
 
-      const messageOut = row.getElementsByClassName("message-out");
-
       /* 
-        
-            below logic could be change in future
-        
+             below logic could be change in future
             */
 
       // start
-      const firstDiv = row.firstChild.firstChild.getElementsByTagName("div")[0];
+      const targetContainer = row.querySelector("._amj_ > div");
 
-      if (!firstDiv) return null;
-
-      const firstDivLastChild = firstDiv.lastChild;
-
-      firstDivLastChild.firstChild.style.display = "flex";
-
-      if (messageOut.length > 0) {
-        firstDivLastChild.firstChild.appendChild(copyButton);
-      } else {
-        firstDivLastChild.firstChild.insertBefore(
-          copyButton,
-          firstDivLastChild.firstChild.firstChild
-        );
+      if (targetContainer) {
+        targetContainer.style.display = "flex";
+        targetContainer.prepend(copyButton);
       }
     } catch (err) {
       console.error("error in row modification", err, row);
